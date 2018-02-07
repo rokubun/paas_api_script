@@ -1,0 +1,24 @@
+---
+# This is the template for Rokubun's PaaS API configuration file
+# to be provided to the program apiScript.py. Paths must be either absolute, 
+# or relative with respect to the script's execution directory
+
+# Argonaut LOG file (.rok extension) with the GNSS data to process
+argonaut-log: 20171016_1.rok   
+
+# (Optional) GNSS file for the reference station. If not provided, a station 
+# from the neighbouring networks will be used. The expected file format is Rinex v2.11
+base-station:   
+
+# CSV file containing the metadata for every image acquired by the sensor flown alongside 
+# with Argonaut
+images-metadata: original_metadata.csv
+    
+# User's secret token. Can be found in the Account section of User's tab in paas.rokubun.cat
+# It consists of 30 alphanumeric characters in uppercase following the structure: 
+# XXXXXX-XXXXXX-XXXXXX-XXXXXX-XXXXXX
+secret-token: XXXXXX-XXXXXX-XXXXXX-XXXXXX-XXXXXX
+
+# Workspace where result will be saved. If it doesn't exist, will be created
+workspace: /path/to/the/workspace
+

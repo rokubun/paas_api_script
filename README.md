@@ -2,10 +2,11 @@ Sample API script
 =================
 
 Sample Python script to automate GNSS data processing through our PaaS's API.
-This is equivalent to using the GUI from paas.rokubun.cat, or running it via
+This is equivalent to using the GUI from [Rokubun Paas](https://paas.rokubun.cat), or running it via
 command line CURLs.
 
-## Description
+Description
+-----------
 
 The script takes care of uploading the GNSS logs from
 Rokubun GNSS receiver (Argonaut) alongside with (optional) the metadata* from the
@@ -26,15 +27,29 @@ The program needs your user's token. You can get it from your personal area in p
 user's email --> Account —> Software —> Secret Token (if you haven't set up an account yet, now it's time
 to do so!).
 
-Finally, the destination folder workspace must be provided
+Finally, the destination folder workspace (working directory) must be provided.
 
 
-\* _Metadata format is based on Pix4D's (https://support.pix4d.com/hc/en-us/articles/202558539-Input-Files):
-imagename,latitude [decimal degrees],longitude [decimal degrees],altitude [meter],omega [degrees], phi [degrees], kappa [degrees],Accuracy Easting [meter],Accuracy Northing [meters],Accuracy Vert [meter], GPS Week, GPS Second of the week_
+\* _Metadata format is based on Pix4D's (https://support.pix4d.com/hc/en-us/articles/202558539-Input-Files), which is a CSV file with the following fields:_
+    
+1. `imagename`
+2. `latitude` [decimal degrees]
+3. `longitude` [decimal degrees]
+4. `altitude` [meter]
+5. `omega` [degrees]
+6. `phi` [degrees]
+7. `kappa` [degrees]
+8. `Accuracy Easting` [meter]
+9. `Accuracy Northing` [meters]
+10. `Accuracy Vert` [meter]
+11. `GPS Week`
+12. `GPS Second of the week`
 
 
 
-## Execution
+Execution
+---------
+
 The program can be run as follows with the example data in this repo.
 ```
 apiScript.py -c config.yaml
@@ -68,11 +83,12 @@ workspace: /path/to/the/workspace
 ```
 
 
-## Requirements
-Python 2 or 3
+Requirements
+------------
 
-requests    --> http://docs.python-requests.org/
+The following components are required to run the script:
 
-wget        --> https://pypi.python.org/pypi/wget
-
-PyYAML      --> https://pypi.python.org/pypi/PyYAML
+* Python 2 or 3
+* [`requests`](http://docs.python-requests.org/)
+* [`wget`](https://pypi.python.org/pypi/wget)
+* [`PyYAML`](https://pypi.python.org/pypi/PyYAML)
